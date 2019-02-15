@@ -1,9 +1,12 @@
-import React, {Component} from 'react'
+import Design from './DesignWithDnd';
+import DesignWithoutDnd from './Design';
+import stripUUID from './stripUUID';
+import { createGroup } from './utils/component-group';
 
-export default class extends Component {
-  render() {
-    return <div>
-      <h2>Welcome to React components</h2>
-    </div>
-  }
-}
+import './styles/index.scss';
+
+Design.stripUUID = stripUUID;
+Design.group = createGroup;
+Design.DesignWithoutDnd = DesignWithoutDnd;
+
+export default Design;
