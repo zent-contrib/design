@@ -1,9 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import isFunction from 'lodash/isFunction';
-import isNumber from 'lodash/isNumber';
-import noop from 'lodash/noop';
+import { isFunction, isNumber, noop } from 'lodash';
 import Pop from 'zent/es/pop';
 
 import LazyMap from '../utils/LazyMap';

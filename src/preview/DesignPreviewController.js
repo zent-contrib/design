@@ -1,8 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import pick from 'lodash/pick';
-import get from 'lodash/get';
+import { pick, get } from 'lodash';
 import { Draggable } from 'react-beautiful-dnd';
 import Pop from 'zent/es/pop';
 

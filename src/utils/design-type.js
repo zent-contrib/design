@@ -1,7 +1,4 @@
-import isString from 'lodash/isString';
-import isArray from 'lodash/isArray';
-import isNumber from 'lodash/isNumber';
-import isFunction from 'lodash/isFunction';
+import { isString, isArray, isNumber, isFunction } from 'lodash';
 
 export function getDesignType(editor, defaultType) {
   const { designType } = editor;
@@ -28,7 +25,7 @@ export function getDesignType(editor, defaultType) {
   throw new TypeError('designType should be a string or an array of strings');
 }
 
-export function isExpectedDesginType(component, expected) {
+export function isExpectedDesignType(component, expected) {
   const { type } = component;
 
   if (isString(type)) {

@@ -31,13 +31,15 @@ import React, { PureComponent } from 'react';
 import { findDOMNode } from 'react-dom';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import assign from 'lodash/assign';
-import find from 'lodash/find';
-import findIndex from 'lodash/findIndex';
-import isEmpty from 'lodash/isEmpty';
-import isUndefined from 'lodash/isUndefined';
-import defaultTo from 'lodash/defaultTo';
-import isFunction from 'lodash/isFunction';
+import {
+  assign,
+  find,
+  findIndex,
+  isEmpty,
+  isUndefined,
+  defaultTo,
+  isFunction,
+} from 'lodash';
 import Alert from 'zent/es/alert';
 import * as storage from 'zent/es/utils/storage';
 
@@ -46,7 +48,7 @@ import uuid from './utils/uuid';
 import DesignPreview from './preview/DesignPreview';
 import {
   getDesignType,
-  isExpectedDesginType,
+  isExpectedDesignType,
   serializeDesignType,
 } from './utils/design-type';
 import LazyMap from './utils/LazyMap';
@@ -445,7 +447,7 @@ export default class Design extends PureComponent {
   validateComponentValue = (value, prevValue, changedProps) => {
     const { type } = value;
     const { components } = this.props;
-    const comp = find(components, c => isExpectedDesginType(c, type));
+    const comp = find(components, c => isExpectedDesignType(c, type));
     const { validate } = comp.editor;
     const p = validate(value, prevValue, changedProps);
 
@@ -575,7 +577,7 @@ export default class Design extends PureComponent {
       for (let i = 0, dragableIndex = -1; i < value.length; i++) {
         const val = value[i];
 
-        const comp = find(components, c => isExpectedDesginType(c, val.type));
+        const comp = find(components, c => isExpectedDesignType(c, val.type));
         const dragable = comp && defaultTo(comp.dragable, true);
         if (dragable) {
           dragableIndex++;
@@ -601,7 +603,7 @@ export default class Design extends PureComponent {
       for (let i = 0, dragableIndex = -1; i < value.length; i++) {
         const val = value[i];
 
-        const comp = find(components, c => isExpectedDesginType(c, val.type));
+        const comp = find(components, c => isExpectedDesignType(c, val.type));
         const dragable = comp && defaultTo(comp.dragable, true);
         if (dragable) {
           dragableIndex++;
@@ -649,7 +651,7 @@ export default class Design extends PureComponent {
         value.map(v => {
           const id = this.getUUIDFromValue(v);
           const { type } = v;
-          const comp = find(components, c => isExpectedDesginType(c, type));
+          const comp = find(components, c => isExpectedDesignType(c, type));
           // 假如组件设置了 editable: false，不处罚校验
           if (!defaultTo(comp.editable, true)) {
             return Promise.resolve({ [id]: {} });
@@ -988,7 +990,7 @@ function findFirstEditableSibling(value, components, startIndex) {
   const loop = i => {
     const val = value[i];
     const type = val.type;
-    const comp = find(components, c => isExpectedDesginType(c, type));
+    const comp = find(components, c => isExpectedDesignType(c, type));
     if (comp && defaultTo(comp.editable, true)) {
       return val;
     }
@@ -1023,7 +1025,7 @@ function makeInstanceCountMapFromValue(value, components) {
   const instanceCountMap = new LazyMap(0);
 
   (value || []).forEach(val => {
-    const comp = find(components, c => isExpectedDesginType(c, val.type));
+    const comp = find(components, c => isExpectedDesignType(c, val.type));
     instanceCountMap.inc(serializeDesignType(comp.type));
   });
 

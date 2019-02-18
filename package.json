@@ -10,7 +10,7 @@
     "lib"
   ],
   "scripts": {
-    "build": "nwb build-react-component --no-demo && npm run build-css --scripts-prepend-node-path",
+    "build": "nwb build-react-component --no-demo && ./scripts/replace-es-with-cjs.sh && npm run build-css --scripts-prepend-node-path",
     "build-css": "./scripts/build-css.sh",
     "clean": "nwb clean-module && nwb clean-demo && rm -rf css",
     "prepublishOnly": "npm run build",
@@ -20,6 +20,7 @@
     "test:watch": "nwb test-react --server"
   },
   "dependencies": {
+    "babel-runtime": "^6.26.0",
     "classnames": "^2.2.6",
     "lodash": "^4.17.11",
     "prop-types": "^15.7.2",

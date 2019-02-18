@@ -1,6 +1,4 @@
-import uniqueId from 'lodash/uniqueId';
-import startsWith from 'lodash/startsWith';
-import isEmpty from 'lodash/isEmpty';
+import { uniqueId, startsWith, isEmpty } from 'lodash';
 
 import { COMPONENT_GROUP_DESIGN_TYPE } from './design-type';
 

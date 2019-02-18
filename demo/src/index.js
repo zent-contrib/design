@@ -12,6 +12,7 @@ import richtextConf from './components/richtext';
 import imageAdConf from './components/image-ad';
 
 import 'zent/css/index.css';
+import '../../src/styles/index.scss';
 import './styles/index.scss';
 
 const components = [

@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import { findDOMNode } from 'react-dom';
 import PropTypes from 'prop-types';
-import isFunction from 'lodash/isFunction';
+import { isFunction } from 'lodash';
 import scroll from 'zent/es/utils/scroll';
 
 import offset from '../utils/offset';

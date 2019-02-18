@@ -1,7 +1,7 @@
 import React, { PureComponent, Component } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import assign from 'lodash/assign';
+import { assign } from 'lodash';
 
 import reorder from 'zent/es/utils/reorder';
 import shallowEqual from 'zent/es/utils/shallowEqual';

@@ -1,6 +1,4 @@
-import has from 'lodash/has';
-import isPlainObject from 'lodash/isPlainObject';
-import isArray from 'lodash/isArray';
+import { has, isPlainObject, isArray } from 'lodash';
 
 const UUID_KEY_PATTERN = /__.+uuid__/i;
 const OLD_KEY = 'zent-design-uuid';

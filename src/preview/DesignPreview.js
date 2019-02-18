@@ -1,18 +1,14 @@
 import React, { PureComponent } from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
-import find from 'lodash/find';
-import some from 'lodash/some';
-import defaultTo from 'lodash/defaultTo';
-import isFunction from 'lodash/isFunction';
-import get from 'lodash/get';
+import { find, some, defaultTo, isFunction, get } from 'lodash';
 import { DragDropContext, Droppable } from 'react-beautiful-dnd';
 
 import DesignPreviewItem from './DesignPreviewItem';
 import DesignPreviewController from './DesignPreviewController';
 import DesignEditorItem from '../editor/DesignEditorItem';
 import DesignEditorAddComponent from '../editor/DesignEditorAddComponent';
-import { isExpectedDesginType } from '../utils/design-type';
+import { isExpectedDesignType } from '../utils/design-type';
 import { isGrouped } from '../utils/component-group';
 import { DND_PREVIEW_CONTROLLER, DEFAULT_BACKGROUND } from './constants';
 import { ADD_COMPONENT_OVERLAY_POSITION } from '../constants';
@@ -152,7 +148,7 @@ class DesignPreview extends PureComponent {
                   {value.map(v => {
                     const valueType = v.type;
                     const comp = find(components, c =>
-                      isExpectedDesginType(c, valueType)
+                      isExpectedDesignType(c, valueType)
                     );
                     const PreviewItem = comp.previewItem || DesignPreviewItem;
                     const EditorItem = comp.editorItem || DesignEditorItem;

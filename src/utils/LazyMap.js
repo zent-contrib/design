@@ -3,7 +3,7 @@
  *
  * If most of the entries in your map defaults to the same value, you can use LazyMap to save memory.
  */
-import has from 'lodash/has';
+import { has } from 'lodash';
 
 export default class LazyMap {
   constructor(defaultValue, map = {}) {
