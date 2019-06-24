@@ -1,6 +1,6 @@
 {
   "name": "@zent/design",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "scope": "zent",
   "description": "design React component",
   "main": "lib/index.js",
