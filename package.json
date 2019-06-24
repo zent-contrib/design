@@ -38,7 +38,7 @@
     "nwb-sass": "^0.9.0",
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
-    "zent": "7.0.0-next.5"
+    "zent": "7.0.0-next.17"
   },
   "author": "",
   "license": "MIT",

@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import assign from 'lodash/assign';
 import noop from 'lodash/noop';
 import PropTypes from 'prop-types';
-import uuid from 'zent/es/utils/uuid';
 
+import uuid from '../../../../../src/utils/uuid'
 import './plugins';
 
 const UEDITOR_LOADED_KEY = '__ZENT_UEDITOR_LOADED_STATUS__';

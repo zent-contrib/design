@@ -34,7 +34,7 @@
 
     &-btn {
       border: 1px solid $theme-stroke-6;
-      color: $theme-primary-2;
+      color: $theme-primary-4;
       font-size: 12px;
       background: $theme-stroke-9;
       box-sizing: border-box;
@@ -94,7 +94,7 @@
   .zent-design-editor-add-component-btn-wrapper {
     &:hover {
       .zent-design-editor-add-component__mixed-btn {
-        color: $theme-primary-2;
+        color: $theme-primary-4;
 
         &--disabled {
           color: $theme-stroke-4;
@@ -102,9 +102,9 @@
       }
 
       .zent-design-editor-add-component__grouped-btn {
-        background: $theme-primary-6;
+        background: $theme-primary-8;
         border-color: $theme-primary-5;
-        color: $theme-primary-2;
+        color: $theme-primary-4;
 
         &--disabled {
           color: $theme-stroke-4;

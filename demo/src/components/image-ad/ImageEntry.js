@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import { Draggable } from 'react-beautiful-dnd';
 import cx from 'classnames';
 import Input from 'zent/es/input';
-import uuid from 'zent/es/utils/uuid';
 import createObjectURL from 'zent/es/utils/createObjectURL';
 
+import uuid from '../../../../src/utils/uuid';
 import { IMAGE_AD_ENTRY_UUID_KEY, IMAGE_AD_DND_TYPE } from './constants';
 
 export class ImageEntry extends Component {

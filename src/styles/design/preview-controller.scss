@@ -31,12 +31,12 @@
 
   &__icon-add {
     circle {
-      fill: $theme-primary-3;
+      fill: $theme-primary-5;
     }
 
     &:hover {
       circle {
-        fill: $theme-primary-2;
+        fill: $theme-primary-4;
       }
     }
   }
@@ -75,11 +75,11 @@
     &:hover {
       + .zent-design-preview-controller__add-marker {
         .zent-design-preview-controller__add-marker-circle {
-          border-color: $theme-primary-2;
+          border-color: $theme-primary-4;
         }
 
         .zent-design-preview-controller__add-marker-line {
-          background: $theme-primary-2;
+          background: $theme-primary-4;
         }
       }
     }
@@ -96,7 +96,7 @@
     display: flex;
 
     &-circle {
-      border: 1px solid $theme-primary-3;
+      border: 1px solid $theme-primary-5;
       border-radius: 50%;
       width: 3px;
       height: 3px;
@@ -107,7 +107,7 @@
     }
 
     &-line {
-      background: $theme-primary-3;
+      background: $theme-primary-5;
       height: 1px;
       width: 100%;
     }
@@ -149,7 +149,7 @@
     &:before {
       z-index: 2;
       display: block;
-      border: 1px dashed $theme-primary-2;
+      border: 1px dashed $theme-primary-4;
     }
   }
 
