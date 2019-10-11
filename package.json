@@ -7,8 +7,7 @@
   "module": "es/index.js",
   "files": [
     "css",
-    "es",
-    "lib"
+    "es"
   ],
   "scripts": {
     "build": "nwb build-react-component --no-demo && ./scripts/replace-es-with-cjs.sh && npm run build-css --scripts-prepend-node-path",
