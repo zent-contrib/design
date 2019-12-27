@@ -276,13 +276,12 @@ export default class Design extends PureComponent {
             type="warning"
           >
             {cacheRestoreMessage}
-            <a
+            <span
               className={`${prefix}-design__restore-cache-alert-use`}
               onClick={this.restoreCache}
-              href="javascript:void(0);"
             >
               使用
-            </a>
+            </span>
           </Alert>
         )}
         {this.renderPreview(preview)}
