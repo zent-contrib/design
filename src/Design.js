@@ -41,7 +41,7 @@ import {
   isFunction,
 } from 'lodash';
 import Alert from 'zent/es/alert';
-import * as storage from 'zent/es/utils/storage';
+import * as storage from './utils/storage';
 
 import uuid from './utils/uuid';
 
