@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Form from 'zent/es/form';
+import Form from '@zent/compat/es/form';
 import Sweetalert from 'zent/es/sweetalert';
 
 const { createForm, Field, InputField } = Form;
