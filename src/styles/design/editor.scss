@@ -1,7 +1,5 @@
 @import './theme-default';
 
-$control-group-red: $theme-error-2;
-
 .zent-design-editor__control-group {
   &:not(:last-child) {
     margin-bottom: 20px;
@@ -26,7 +24,7 @@ $control-group-red: $theme-error-2;
   }
 
   &-help-desc {
-    color: $theme-stroke-3;
+    @include theme-color(color, stroke, 3);
     margin-top: 20px;
   }
 
@@ -40,10 +38,10 @@ $control-group-red: $theme-error-2;
   }
 
   &-required-star {
-    color: $control-group-red;
+    @include theme-color(color, error, 2);
   }
 
   &.has-error {
-    color: $control-group-red;
+    @include theme-color(color, error, 2);
   }
 }

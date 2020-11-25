@@ -1,12 +1,12 @@
-import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
-import cx from 'classnames';
-import { isFunction, isNumber, noop } from 'lodash';
-import Pop from 'zent/es/pop';
+import React, { PureComponent } from "react";
+import PropTypes from "prop-types";
+import cx from "classnames";
+import { isFunction, isNumber, noop } from "lodash";
+import Pop from "zent/es/pop";
 
-import LazyMap from '../utils/LazyMap';
-import { serializeDesignType } from '../utils/design-type';
-import { splitGroup, isGrouped } from '../utils/component-group';
+import LazyMap from "../utils/LazyMap";
+import { serializeDesignType } from "../utils/design-type";
+import { splitGroup, isGrouped } from "../utils/component-group";
 
 export default class DesignEditorAddComponent extends PureComponent {
   static propTypes = {
@@ -23,20 +23,20 @@ export default class DesignEditorAddComponent extends PureComponent {
 
   static defaultProps = {
     fromSelected: false,
-    prefix: 'zent',
+    prefix: "zent",
   };
 
   state = {
     popVisibleMap: new LazyMap(false),
   };
 
-  onPopVisibleChange = key => visible => {
+  onPopVisibleChange = (key) => (visible) => {
     this.setState({
       popVisibleMap: this.state.popVisibleMap.clone().set(key, visible),
     });
   };
 
-  onAdd = component => () => {
+  onAdd = (component) => () => {
     const { componentInstanceCount } = this.props;
 
     if (canAddMoreInstance(component, componentInstanceCount)) {
@@ -68,7 +68,7 @@ export default class DesignEditorAddComponent extends PureComponent {
           添加内容
         </div>
         <div className={`${prefix}-design-editor-add-component__mixed-list`}>
-          {components.map(c => {
+          {components.map((c) => {
             const { type } = c;
             const key = serializeDesignType(type);
 
@@ -99,7 +99,7 @@ export default class DesignEditorAddComponent extends PureComponent {
       <div
         className={`${prefix}-design-editor-add-component ${prefix}-design-editor-add-component--grouped`}
       >
-        {groups.map(g => (
+        {groups.map((g) => (
           <ComponentGroup
             prefix={prefix}
             key={g.group.name}
@@ -131,7 +131,7 @@ function ComponentGroup({
         {group.name}
       </p>
       <div className={`${prefix}-design-editor-add-component__grouped-list`}>
-        {components.map(c => {
+        {components.map((c) => {
           const { type } = c;
           const key = serializeDesignType(type);
 
@@ -172,24 +172,27 @@ function ComponentButton(props) {
   return (
     <Pop
       content={message}
-      trigger={disabled && message ? 'hover' : 'none'}
+      trigger={disabled && message ? "hover" : "none"}
       visible={visible}
       onVisibleChange={onPopVisibleChange(key)}
       position="top-center"
       mouseLeaveDelay={100}
       mouseEnterDelay={300}
       className={`${prefix}-design-editor-add-component-pop`}
-      wrapperClassName={`${prefix}-design-editor-add-component-btn-wrapper ${prefix}-design-editor-add-component__${type}-btn-wrapper`}
     >
-      <a
+      <div
         onClick={onAdd(component)}
-        className={cx(`${prefix}-design-editor-add-component__${type}-btn`, {
-          [`${prefix}-design-editor-add-component__${type}-btn--disabled`]: disabled,
-        })}
-        disabled={disabled}
+        className={`${prefix}-design-editor-add-component-btn-wrapper ${prefix}-design-editor-add-component__${type}-btn-wrapper`}
       >
-        {component.editor.designDescription}
-      </a>
+        <a
+          className={cx(`${prefix}-design-editor-add-component__${type}-btn`, {
+            [`${prefix}-design-editor-add-component__${type}-btn--disabled`]: disabled,
+          })}
+          disabled={disabled}
+        >
+          {component.editor.designDescription}
+        </a>
+      </div>
     </Pop>
   );
 }
@@ -215,13 +218,13 @@ function getLimitMessage(component, componentInstanceCount) {
     return limitMessage(count);
   }
 
-  let defaultMessage = '';
+  let defaultMessage = "";
   if (isNumber(limit)) {
     // limit === 0 表示不限制
     if (limit > 0) {
       defaultMessage = `该组件最多可以添加 ${limit} 个`;
     } else if (limit < 0) {
-      defaultMessage = '该组件暂不可用';
+      defaultMessage = "该组件暂不可用";
     }
   }
 

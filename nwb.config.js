@@ -1,15 +1,15 @@
 module.exports = {
-  type: 'react-component',
+  type: "react-component",
   npm: {
     cjs: false,
     esModules: true,
     umd: false,
   },
   babel: {
-    cherryPick: 'lodash',
-    runtime: 'helpers',
+    cherryPick: "lodash",
+    runtime: { helpers: true },
     removePropTypes: {
-      mode: 'remove',
+      mode: "remove",
       removeImport: true,
     },
   },

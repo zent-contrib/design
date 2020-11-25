@@ -1,10 +1,11 @@
-@import './design/variable';
-@import './design/preview';
-@import './design/preview-item';
-@import './design/editor-item';
-@import './design/preview-controller';
-@import './design/editor-add-component';
-@import './design/editor';
+@import "./design/theme-default";
+@import "./design/variable";
+@import "./design/preview";
+@import "./design/preview-item";
+@import "./design/editor-item";
+@import "./design/preview-controller";
+@import "./design/editor-add-component";
+@import "./design/editor";
 
 .zent-design {
   width: 760px;
@@ -15,7 +16,10 @@
     margin-bottom: 10px;
 
     &-use {
+      @include theme-color(color, primary, 4);
+
       text-decoration: none;
+      cursor: pointer;
     }
   }
 
@@ -32,21 +36,21 @@
   &__add {
     padding-bottom: 5px;
     position: relative;
-    border-top: 1px solid $theme-stroke-6;
+    @include theme-border-top(1px, solid, stroke, 6);
 
     &--mixed {
-      background: $theme-stroke-8;
+      @include theme-color(background, stroke, 8);
 
       &:after {
-        border-bottom-color: $theme-stroke-8;
+        @include theme-color(border-bottom-color, stroke, 8);
       }
     }
 
     &--grouped {
-      background: $theme-stroke-9;
+      @include theme-color(background, stroke, 9);
 
       &:after {
-        border-bottom-color: $theme-stroke-9;
+        @include theme-color(border-bottom-color, stroke, 9);
       }
     }
   }

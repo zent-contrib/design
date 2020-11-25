@@ -2,14 +2,15 @@
 @import './variable';
 
 .zent-design-editor-item {
+  @include theme-color(background, stroke, 8);
+  @include theme-border(1px, solid, stroke, 6);
+
   position: absolute;
   left: 100%;
   top: 0;
   padding: 15px;
   min-height: 28px;
-  background: $theme-stroke-8;
   border-radius: 5px;
-  border: 1px solid $theme-stroke-6;
   width: 420px;
   margin-left: 20px;
   font-size: 12px;
@@ -17,7 +18,7 @@
   z-index: 5;
 
   a {
-    color: $theme-primary-4;
+    @include theme-color(color, primary, 4);
     text-decoration: none;
     cursor: pointer;
   }
@@ -36,14 +37,14 @@
 
   &:after {
     border-color: transparent;
-    border-right-color: $theme-stroke-8;
+    @include theme-color(border-right-color, stroke, 8);
     border-width: 6px;
     margin-top: -6px;
   }
 
   &:before {
     border-color: transparent;
-    border-right-color: $theme-stroke-6;
+    @include theme-color(border-right-color, stroke, 6);
     border-width: 7px;
     margin-top: -7px;
   }

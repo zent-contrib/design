@@ -1,12 +1,12 @@
-import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
-import cx from 'classnames';
-import { pick, get } from 'lodash';
-import { Draggable } from 'react-beautiful-dnd';
-import Pop from 'zent/es/pop';
+import React, { PureComponent } from "react";
+import PropTypes from "prop-types";
+import cx from "classnames";
+import { pick, get } from "lodash";
+import { Draggable } from "react-beautiful-dnd";
+import Pop from "zent/es/pop";
 
-import { DND_PREVIEW_CONTROLLER, DEFAULT_BACKGROUND } from './constants';
-import { ADD_COMPONENT_OVERLAY_POSITION } from '../constants';
+import { DND_PREVIEW_CONTROLLER, DEFAULT_BACKGROUND } from "./constants";
+import { ADD_COMPONENT_OVERLAY_POSITION } from "../constants";
 
 class DesignPreviewController extends PureComponent {
   static propTypes = {
@@ -78,7 +78,7 @@ class DesignPreviewController extends PureComponent {
   };
 
   static defaultProps = {
-    prefix: 'zent',
+    prefix: "zent",
   };
 
   render() {
@@ -99,12 +99,12 @@ class DesignPreviewController extends PureComponent {
       allowHoverEffects,
     } = this.props;
     const props = pick(this.props, [
-      'value',
-      'design',
-      'globalConfig',
-      'settings',
+      "value",
+      "design",
+      "globalConfig",
+      "settings",
     ]);
-    const getClassName = highlight =>
+    const getClassName = (highlight) =>
       cx(`${prefix}-design-preview-controller`, {
         [`${prefix}-design-preview-controller--editable`]: editable,
         [`${prefix}-design-preview-controller--selected`]: isSelected,
@@ -135,7 +135,7 @@ class DesignPreviewController extends PureComponent {
                   ...provided.draggableProps.style,
                   backgroundColor: get(
                     settings,
-                    'previewBackground',
+                    "previewBackground",
                     DEFAULT_BACKGROUND
                   ),
                 }}
@@ -207,22 +207,22 @@ class DesignPreviewController extends PureComponent {
     return tree;
   }
 
-  onSelect = evt => {
+  onSelect = (evt) => {
     const { editable } = this.props;
     if (!editable) {
       return;
     }
 
-    this.invokeCallback('onSelect', evt, false);
+    this.invokeCallback("onSelect", evt, false);
   };
 
-  onPrepend = evt => {
-    this.invokeCallback('onAdd', evt, true, ADD_COMPONENT_OVERLAY_POSITION.TOP);
+  onPrepend = (evt) => {
+    this.invokeCallback("onAdd", evt, true, ADD_COMPONENT_OVERLAY_POSITION.TOP);
   };
 
-  onAppend = evt => {
+  onAppend = (evt) => {
     this.invokeCallback(
-      'onAdd',
+      "onAdd",
       evt,
       true,
       ADD_COMPONENT_OVERLAY_POSITION.BOTTOM
@@ -230,7 +230,7 @@ class DesignPreviewController extends PureComponent {
   };
 
   onDelete = () => {
-    this.invokeCallback('onDelete', null, true);
+    this.invokeCallback("onDelete", null, true);
   };
 
   invokeCallback(action, evt, stopPropagation, ...args) {
@@ -252,9 +252,13 @@ function DeleteButton({ prefix, onDelete }) {
       position="left-center"
       centerArrow
       onConfirm={onDelete}
-      wrapperClassName={`${prefix}-design-preview-controller__action-btn-delete`}
     >
-      <IconDelete prefix={prefix} onClick={stopEventPropagation} />
+      <div
+        className={`${prefix}-design-preview-controller__action-btn-delete`}
+        onClick={stopEventPropagation}
+      >
+        <IconDelete prefix={prefix} />
+      </div>
     </Pop>
   );
 }

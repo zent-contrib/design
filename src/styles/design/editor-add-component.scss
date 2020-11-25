@@ -1,5 +1,5 @@
-@import './fn';
-@import './theme-default';
+@import "./fn";
+@import "./theme-default";
 
 .zent-design-editor-add-component {
   box-sizing: border-box;
@@ -9,12 +9,12 @@
     padding: 0 5px;
 
     &-title {
+      @include theme-color(color, stroke, 1);
       height: 40px;
       line-height: 40px;
       text-align: center;
       font-weight: bold;
       font-size: 14px;
-      color: $theme-stroke-1;
     }
 
     &-list {
@@ -33,10 +33,10 @@
     }
 
     &-btn {
-      border: 1px solid $theme-stroke-6;
-      color: $theme-primary-4;
+      @include theme-border(1px, solid, stroke, 6);
+      @include theme-color(color, primary, 4);
+      @include theme-color(background, stroke, 9);
       font-size: 12px;
-      background: $theme-stroke-9;
       box-sizing: border-box;
       border-radius: 0;
       height: 100%;
@@ -72,9 +72,9 @@
     }
 
     &-btn {
-      border: 1px dashed $theme-stroke-6;
-      color: $theme-stroke-2;
-      background: $theme-stroke-8;
+      @include theme-border(1px, dashed, stroke, 6);
+      @include theme-color(color, stroke, 2);
+      @include theme-color(background, stroke, 8);
       box-sizing: border-box;
       font-size: 12px;
       border-radius: 0;
@@ -94,32 +94,32 @@
   .zent-design-editor-add-component-btn-wrapper {
     &:hover {
       .zent-design-editor-add-component__mixed-btn {
-        color: $theme-primary-4;
+        @include theme-color(color, primary, 4);
 
         &--disabled {
-          color: $theme-stroke-4;
+          @include theme-color(color, stroke, 4);
         }
       }
 
       .zent-design-editor-add-component__grouped-btn {
-        background: $theme-primary-8;
-        border-color: $theme-primary-5;
-        color: $theme-primary-4;
+        @include theme-color(background, primary, 8);
+        @include theme-color(border-color, primary, 5);
+        @include theme-color(color, primary, 4);
 
         &--disabled {
-          color: $theme-stroke-4;
+          @include theme-color(color, stroke, 4);
         }
       }
     }
 
     .zent-design-editor-add-component__mixed-btn--disabled {
       cursor: not-allowed;
-      background: $theme-stroke-8;
-      color: $theme-stroke-4;
+      @include theme-color(background, stroke, 8);
+      @include theme-color(color, stroke, 4);
     }
 
     .zent-design-editor-add-component__grouped-btn--disabled {
-      color: $theme-stroke-4;
+      @include theme-color(color, stroke, 4);
       cursor: not-allowed;
     }
   }

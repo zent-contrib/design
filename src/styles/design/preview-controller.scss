@@ -1,4 +1,4 @@
-@import './theme-default';
+@import "./theme-default";
 
 .zent-design-preview-controller {
   position: relative;
@@ -19,24 +19,24 @@
     display: none;
 
     circle {
-      fill: $theme-stroke-4;
+      @include theme-color(fill, stroke, 4);
     }
 
     &:hover {
       circle {
-        fill: $theme-stroke-3;
+        @include theme-color(fill, stroke, 3);
       }
     }
   }
 
   &__icon-add {
     circle {
-      fill: $theme-primary-5;
+      @include theme-color(fill, primary, 5);
     }
 
     &:hover {
       circle {
-        fill: $theme-primary-4;
+        @include theme-color(fill, primary, 4);
       }
     }
   }
@@ -75,11 +75,11 @@
     &:hover {
       + .zent-design-preview-controller__add-marker {
         .zent-design-preview-controller__add-marker-circle {
-          border-color: $theme-primary-4;
+          @include theme-color(border-color, primary, 4);
         }
 
         .zent-design-preview-controller__add-marker-line {
-          background: $theme-primary-4;
+          @include theme-color(background, primary, 4);
         }
       }
     }
@@ -96,18 +96,18 @@
     display: flex;
 
     &-circle {
-      border: 1px solid $theme-primary-5;
+      @include theme-border(1px, solid, primary, 5);
+      @include theme-color(background, stroke, 9);
       border-radius: 50%;
       width: 3px;
       height: 3px;
       display: inline-block;
       z-index: 1;
       flex: 0 0 3px;
-      background: $theme-stroke-9;
     }
 
     &-line {
-      background: $theme-primary-5;
+      @include theme-color(background, primary, 5);
       height: 1px;
       width: 100%;
     }
@@ -133,7 +133,7 @@
 
 .zent-design-preview-controller--highlight.zent-design-preview-controller {
   &:before {
-    content: '';
+    content: "";
     position: absolute;
     width: 100%;
     height: 100%;
@@ -147,9 +147,9 @@
   &:hover,
   &--selected {
     &:before {
+      @include theme-border(1px, dashed, primary, 4);
       z-index: 2;
       display: block;
-      border: 1px dashed $theme-primary-4;
     }
   }
 

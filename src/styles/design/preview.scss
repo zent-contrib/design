@@ -1,17 +1,17 @@
-@import './variable';
-@import './theme-default';
+@import "./variable";
+@import "./theme-default";
 
 .zent-design-preview {
-  border: 1px solid $theme-stroke-6;
+  @include theme-border(1px, solid, stroke, 6);
   width: $preview-width;
   min-height: $preview-height;
   position: relative;
 
   .zent-design-add-component-overlay--grouped {
-    background: $theme-stroke-9;
+    @include theme-color(background, stroke, 9);
 
     &:after {
-      border-right-color: $theme-stroke-9;
+      @include theme-color(border-right-color, stroke, 9);
     }
   }
 }
