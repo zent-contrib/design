@@ -28,18 +28,18 @@
     "uuid": "^3.3.2"
   },
   "peerDependencies": {
-    "react": ">=16.0.0",
+    "react": ">=17.0.0",
     "zent": ">=9.0.0"
   },
   "devDependencies": {
-    "@zent/compat": "2.0.0-beta6",
+    "@zent/compat": "2.0.0-beta.7",
     "node-sass": "^4.11.0",
     "node-sass-magic-importer": "^5.3.0",
     "nwb": "0.25.x",
     "nwb-sass": "^0.10.2",
-    "react": "^16.8.2",
-    "react-dom": "^16.8.2",
-    "zent": "9.0.0-beta16"
+    "react": "17.0.x",
+    "react-dom": "17.0.x",
+    "zent": "9.0.0-beta.24"
   },
   "author": "",
   "license": "MIT",

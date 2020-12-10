@@ -1191,6 +1191,11 @@
   resolved "https://registry.yarnpkg.com/@types/q/-/q-1.5.4.tgz#15925414e0ad2cd765bfef58842f7e26a7accb24"
   integrity sha512-1HcDas8SEj4z1Wc696tH56G8OlRaH/sqZOynNNB+HF0WOeXPaxTtbYzJY2oEfiUxjSKjhCKr+MvR7dCHcEelug==
 
+"@types/resize-observer-browser@^0.1.4":
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/@types/resize-observer-browser/-/resize-observer-browser-0.1.4.tgz#84879a4d6d4aaefde53d4b29c91c0c4cbcffc26f"
+  integrity sha512-rPvqs+1hL/5hbES/0HTdUu4lvNmneiwKwccbWe7HGLWbnsLdqKnQHyWLg4Pj0AMO7PLHCwBM1Cs8orChdkDONg==
+
 "@types/sortablejs@~1.10.6":
   version "1.10.6"
   resolved "https://registry.yarnpkg.com/@types/sortablejs/-/sortablejs-1.10.6.tgz#98725ae08f1dfe28b8da0fdf302c417f5ff043c0"
@@ -1389,16 +1394,16 @@
   resolved "https://registry.yarnpkg.com/@xtuc/long/-/long-4.2.2.tgz#d291c6a4e97989b5c61d9acf396ae4fe133a718d"
   integrity sha512-NuHqBY1PB/D8xU6s/thBgOAiAP7HOYDQ32+BFZILJ8ivkUkAHQnWfn6WhL79Owj1qmUnoN/YPhktdIoucipkAQ==
 
-"@zent/compat@2.0.0-beta6":
-  version "2.0.0-beta6"
-  resolved "https://registry.yarnpkg.com/@zent/compat/-/compat-2.0.0-beta6.tgz#ecf17fd9b3e388902fc961f2fb62f4544692140c"
-  integrity sha512-mkWxK3AlS65BF+7igBN/roKRxBmBLoOd1uh/r/FsA/bTE/a4L84vpTFtUCcnYg3yBNRFONoWsIfsGDOLawozdA==
+"@zent/compat@2.0.0-beta.7":
+  version "2.0.0-beta.7"
+  resolved "https://registry.yarnpkg.com/@zent/compat/-/compat-2.0.0-beta.7.tgz#65b30e1a2e569055266bc422977352261a1a2bb6"
+  integrity sha512-+8p+Pzis53Ey0Wk8u7vnlcCiJ/541wYlGPwiUtdpc8BCJojBoBYVPiAk8kIW9x6xSJIhPEyFAlaQN0fCT+B9bA==
   dependencies:
     "@types/sortablejs" "~1.10.6"
     classnames "^2.2.6"
     date-fns "^2.15.0"
     lodash-es "^4.17.11"
-    react-is "^16.8.1"
+    react-is "^17.0.1"
     sortablejs "~1.12.0"
     tslib "^2.0.0"
     utility-types "^3.4.1"
@@ -7861,15 +7866,14 @@ react-beautiful-dnd@6.0.1:
     redux-thunk "^2.2.0"
     reselect "^3.0.1"
 
-react-dom@^16.8.2:
-  version "16.10.2"
-  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.10.2.tgz#4840bce5409176bc3a1f2bd8cb10b92db452fda6"
-  integrity sha512-kWGDcH3ItJK4+6Pl9DZB16BXYAZyrYQItU4OMy0jAkv5aNqc+mAKb4TpFtAteI6TJZu+9ZlNhaeNQSVQDHJzkw==
+react-dom@17.0.x:
+  version "17.0.1"
+  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-17.0.1.tgz#1de2560474ec9f0e334285662ede52dbc5426fc6"
+  integrity sha512-6eV150oJZ9U2t9svnsspTMrWNyHc6chX0KzDeAOXftRa8bNeOKTTfCJ7KorIwenkHd2xqVTBTCZd79yk/lx/Ug==
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
-    prop-types "^15.6.2"
-    scheduler "^0.16.2"
+    scheduler "^0.20.1"
 
 react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.1:
   version "16.10.2"
@@ -7923,14 +7927,13 @@ react-transition-group@^4.4.1:
     loose-envify "^1.4.0"
     prop-types "^15.6.2"
 
-react@^16.8.2:
-  version "16.10.2"
-  resolved "https://registry.yarnpkg.com/react/-/react-16.10.2.tgz#a5ede5cdd5c536f745173c8da47bda64797a4cf0"
-  integrity sha512-MFVIq0DpIhrHFyqLU0S3+4dIcBhhOvBE8bJ/5kHPVOVaGdo0KuiQzpcjCPsf585WvhypqtrMILyoE2th6dT+Lw==
+react@17.0.x:
+  version "17.0.1"
+  resolved "https://registry.yarnpkg.com/react/-/react-17.0.1.tgz#6e0600416bd57574e3f86d92edba3d9008726127"
+  integrity sha512-lG9c9UuMHdcAexXtigOZLX8exLWkW0Ku29qPRU8uhF2R9BN96dLCt0psvzPLlHc5OWkgymP3qwTRgbnw5BKx3w==
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
-    prop-types "^15.6.2"
 
 read-pkg-up@^1.0.1:
   version "1.0.1"
@@ -8404,10 +8407,10 @@ sax@^1.2.4, sax@~1.2.4:
   resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
   integrity sha512-NqVDv9TpANUjFm0N8uM5GxL36UgKi9/atZw+x7YFnQ8ckwFGKrl4xX4yWtrey3UJm5nP1kUbnYgLopqWNSRhWw==
 
-scheduler@^0.16.2:
-  version "0.16.2"
-  resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.16.2.tgz#f74cd9d33eff6fc554edfb79864868e4819132c1"
-  integrity sha512-BqYVWqwz6s1wZMhjFvLfVR5WXP7ZY32M/wYPo04CcuPM7XZEbV2TBNW7Z0UkguPTl0dWMA59VbNXxK6q+pHItg==
+scheduler@^0.20.1:
+  version "0.20.1"
+  resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.20.1.tgz#da0b907e24026b01181ecbc75efdc7f27b5a000c"
+  integrity sha512-LKTe+2xNJBNxu/QhHvDR14wUXHRQbVY5ZOYpOGWRzhydZUqrLb2JBvLPY7cAqFmqrWuDED0Mjk7013SZiOz6Bw==
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
@@ -10114,11 +10117,12 @@ yeast@0.1.2:
   resolved "https://registry.yarnpkg.com/yeast/-/yeast-0.1.2.tgz#008e06d8094320c372dbc2f8ed76a0ca6c8ac419"
   integrity sha1-AI4G2AlDIMNy28L47XagymyKxBk=
 
-zent@9.0.0-beta16:
-  version "9.0.0-beta16"
-  resolved "https://registry.yarnpkg.com/zent/-/zent-9.0.0-beta16.tgz#6ca242984705d22f74990e5b5fef55e44596617e"
-  integrity sha512-Xk4EF+soUNuVXWGBpQOWenZG3woBugnzsOLTqip083pbdXuYGY+6acRPv2JHTBH6jet/aoaco81BmP7d8qDKNg==
+zent@9.0.0-beta.24:
+  version "9.0.0-beta.24"
+  resolved "https://registry.yarnpkg.com/zent/-/zent-9.0.0-beta.24.tgz#d60a54c4836b109474ac8c436516472d6ecb14ef"
+  integrity sha512-hpHrksUj3XkwJ3Robx89FSmrzuIXw4uY5aoCq3+9yDbgrYrgGQZEgtThYK4iEQ7NPXzOwVfwl1FAtfXqijK+dA==
   dependencies:
+    "@types/resize-observer-browser" "^0.1.4"
     "@types/sortablejs" "~1.10.6"
     big.js "^5.2.2"
     classnames "^2.2.6"
