@@ -1394,10 +1394,10 @@
   resolved "https://registry.yarnpkg.com/@xtuc/long/-/long-4.2.2.tgz#d291c6a4e97989b5c61d9acf396ae4fe133a718d"
   integrity sha512-NuHqBY1PB/D8xU6s/thBgOAiAP7HOYDQ32+BFZILJ8ivkUkAHQnWfn6WhL79Owj1qmUnoN/YPhktdIoucipkAQ==
 
-"@zent/compat@2.0.0-beta.7":
-  version "2.0.0-beta.7"
-  resolved "https://registry.yarnpkg.com/@zent/compat/-/compat-2.0.0-beta.7.tgz#65b30e1a2e569055266bc422977352261a1a2bb6"
-  integrity sha512-+8p+Pzis53Ey0Wk8u7vnlcCiJ/541wYlGPwiUtdpc8BCJojBoBYVPiAk8kIW9x6xSJIhPEyFAlaQN0fCT+B9bA==
+"@zent/compat@2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@zent/compat/-/compat-2.0.0.tgz#40aead27eb5ea1ad81ebff633f51a4b6b7f258cc"
+  integrity sha512-yUmqF67iJHLVaxJWGfF0A6CWU5572Xyd2R29+X1yg76URTizZLU1FN66E9x/O5DgOQE6XX7EeDajlvR5ltGgaw==
   dependencies:
     "@types/sortablejs" "~1.10.6"
     classnames "^2.2.6"
@@ -10003,10 +10003,10 @@ yeast@0.1.2:
   resolved "https://registry.yarnpkg.com/yeast/-/yeast-0.1.2.tgz#008e06d8094320c372dbc2f8ed76a0ca6c8ac419"
   integrity sha1-AI4G2AlDIMNy28L47XagymyKxBk=
 
-zent@9.0.0-beta.24:
-  version "9.0.0-beta.24"
-  resolved "https://registry.yarnpkg.com/zent/-/zent-9.0.0-beta.24.tgz#d60a54c4836b109474ac8c436516472d6ecb14ef"
-  integrity sha512-hpHrksUj3XkwJ3Robx89FSmrzuIXw4uY5aoCq3+9yDbgrYrgGQZEgtThYK4iEQ7NPXzOwVfwl1FAtfXqijK+dA==
+zent@9.0.0:
+  version "9.0.0"
+  resolved "https://registry.yarnpkg.com/zent/-/zent-9.0.0.tgz#6f043bec825696620f79cd334d21b6fbc5611f9c"
+  integrity sha512-p4aHPwghhkMa6/qgQ7gwLn4kXWQ/em0tmo3fYSuZUsfp3v39ik4ZijIsPulmPcRagNbaQabo+CglzjZoadGwnA==
   dependencies:
     "@types/resize-observer-browser" "^0.1.4"
     "@types/sortablejs" "~1.10.6"

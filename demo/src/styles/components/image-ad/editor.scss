@@ -1,4 +1,4 @@
-@import '../../theme-default';
+@import "../../theme-default";
 
 @mixin hidden-input {
   position: absolute;
@@ -138,16 +138,16 @@
   &__entry {
     position: relative;
 
-    &-prepend-btn,
-    &-append-btn,
-    &-close-btn {
+    &-prepend-btn.zenticon,
+    &-append-btn.zenticon,
+    &-close-btn.zenticon {
       display: none;
     }
 
     &:hover {
-      .zent-design-component-image-ad-editor__entry-close-btn,
-      .zent-design-component-image-ad-editor__entry-prepend-btn,
-      .zent-design-component-image-ad-editor__entry-append-btn {
+      .zent-design-component-image-ad-editor__entry-close-btn.zenticon,
+      .zent-design-component-image-ad-editor__entry-prepend-btn.zenticon,
+      .zent-design-component-image-ad-editor__entry-append-btn.zenticon {
         display: inline-block;
       }
     }
@@ -156,7 +156,7 @@
       margin-bottom: 15px;
     }
 
-    &-close-btn {
+    &-close-btn.zenticon {
       position: absolute;
       top: -6px;
       right: -6px;
@@ -168,8 +168,8 @@
       }
     }
 
-    &-prepend-btn,
-    &-append-btn {
+    &-prepend-btn.zenticon,
+    &-append-btn.zenticon {
       background: $theme-primary-3;
       border-radius: 50%;
       color: $theme-stroke-9;
@@ -178,18 +178,18 @@
       position: absolute;
     }
 
-    &-prepend-btn:hover,
-    &-append-btn:hover {
+    &-prepend-btn.zenticon:hover,
+    &-append-btn.zenticon:hover {
       background: $theme-primary-2;
     }
 
-    &-prepend-btn {
+    &-prepend-btn.zenticon {
       top: 0;
       left: 50%;
       transform: translate(-50%, -50%);
     }
 
-    &-append-btn {
+    &-append-btn.zenticon {
       bottom: 1px;
       left: 50%;
       transform: translate(-50%, 50%);
