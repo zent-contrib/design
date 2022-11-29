@@ -27,6 +27,8 @@
 | scrollLeftOffset | 滚动到左侧时的偏移量 | number \| func | | 可选 |
 | className | 额外类名 | string | | 可选 |
 | prefix | 类名前缀 | string | | 可选 |
+| customDisableEditPanel | 禁用编辑时的通用组件 | node | | 可选 |
+| customDisablePreviewPanel | 禁用预览时的蒙层 | node | | 可选 |
 
 `components` 是一个数组，列出了所有支持的组件，每一项需要指定组件的类型，预览和编辑组件，以及是否可以拖拽、编辑等。 
 

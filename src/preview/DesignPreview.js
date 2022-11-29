@@ -68,6 +68,12 @@ class DesignPreview extends PureComponent {
 
     // 以下 props 由 config 组件提供
     background: PropTypes.string,
+
+    // 某些组件需要展示编辑面板，但不支持编辑，允许自定义不可编辑样式
+    customDisableEditPanel: PropTypes.node,
+
+    // 某些组件禁止预览，可自定义禁止预览蒙层
+    customDisablePreviewPanel: PropTypes.node,
   };
 
   static defaultProps = {
@@ -110,6 +116,8 @@ class DesignPreview extends PureComponent {
       globalConfig,
       disabled,
       footer,
+      customDisableEditPanel,
+      customDisablePreviewPanel,
     } = this.props;
     const isComponentsGrouped = isGrouped(appendableComponents);
     const cls = cx(`${prefix}-design-preview`, className);
@@ -165,6 +173,10 @@ class DesignPreview extends PureComponent {
                         id={id}
                         ref={this.savePreviewItem(id)}
                       >
+                        { comp.needDisabledEditComponents && customDisablePreviewPanel
+                          ? customDisablePreviewPanel
+                          : null
+                        }
                         <PreviewController
                           prefix={prefix}
                           value={v}
@@ -202,19 +214,23 @@ class DesignPreview extends PureComponent {
                             disabled={disabled}
                             ref={this.saveEditorItem(id)}
                           >
-                            <comp.editor
-                              {...getAdditionalProps(comp.editorProps, v)}
-                              ref={this.saveEditor(id)}
-                              value={v}
-                              onChange={onComponentValueChange(v)}
-                              settings={settings}
-                              onSettingsChange={onSettingsChange}
-                              globalConfig={globalConfig}
-                              design={design}
-                              validation={validations[id] || {}}
-                              showError={showError}
-                              prefix={prefix}
-                            />
+                            {comp.needDisabledEditComponents && customDisableEditPanel ? (
+                              customDisableEditPanel
+                            ) : (
+                              <comp.editor
+                                {...getAdditionalProps(comp.editorProps, v)}
+                                ref={this.saveEditor(id)}
+                                value={v}
+                                onChange={onComponentValueChange(v)}
+                                settings={settings}
+                                onSettingsChange={onSettingsChange}
+                                globalConfig={globalConfig}
+                                design={design}
+                                validation={validations[id] || {}}
+                                showError={showError}
+                                prefix={prefix}
+                              />
+                            )}
                           </EditorItem>
                         )}
 

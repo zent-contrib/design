@@ -108,6 +108,8 @@
 
         &--disabled {
           color: $theme-stroke-4;
+          background: $theme-stroke-8;
+          border-color: $theme-stroke-5;
         }
       }
     }
