@@ -99,18 +99,24 @@ export default class DesignEditorAddComponent extends PureComponent {
       <div
         className={`${prefix}-design-editor-add-component ${prefix}-design-editor-add-component--grouped`}
       >
-        {groups.map((g) => (
-          <ComponentGroup
-            prefix={prefix}
-            key={g.group.name}
-            group={g.group}
-            components={g.components}
-            componentInstanceCount={componentInstanceCount}
-            onAdd={this.onAdd}
-            popVisibleMap={popVisibleMap}
-            onPopVisibleChange={this.onPopVisibleChange}
-          />
-        ))}
+        {groups.map((g) => {
+          if (g.components.every((i) => i.needHide)) {
+            return null;
+          }
+
+          return (
+            <ComponentGroup
+              prefix={prefix}
+              key={g.group.name}
+              group={g.group}
+              components={g.components}
+              componentInstanceCount={componentInstanceCount}
+              onAdd={this.onAdd}
+              popVisibleMap={popVisibleMap}
+              onPopVisibleChange={this.onPopVisibleChange}
+            />
+          );
+        })}
       </div>
     );
   }
@@ -130,10 +136,15 @@ function ComponentGroup({
       <p className={`${prefix}-design-editor-add-component__grouped-title`}>
         {group.name}
       </p>
+      {group.desc && group.desc}
       <div className={`${prefix}-design-editor-add-component__grouped-list`}>
         {components.map((c) => {
           const { type } = c;
           const key = serializeDesignType(type);
+
+          if (c.needHide) {
+            return null;
+          }
 
           return (
             <ComponentButton
@@ -164,7 +175,9 @@ function ComponentButton(props) {
     type,
   } = props;
 
-  const disabled = !canAddMoreInstance(component, componentInstanceCount);
+  const disabled =
+    !canAddMoreInstance(component, componentInstanceCount) ||
+    component.needDisabled;
   const key = serializeDesignType(component.type);
   const visible = popVisibleMap.get(key);
   const message = getLimitMessage(component, componentInstanceCount);
@@ -181,7 +194,7 @@ function ComponentButton(props) {
       className={`${prefix}-design-editor-add-component-pop`}
     >
       <div
-        onClick={onAdd(component)}
+        onClick={component.needDisabled ? () => {} : onAdd(component)}
         className={`${prefix}-design-editor-add-component-btn-wrapper ${prefix}-design-editor-add-component__${type}-btn-wrapper`}
       >
         <a
