@@ -187,6 +187,12 @@ export default class Design extends PureComponent {
     className: PropTypes.string,
 
     prefix: PropTypes.string,
+
+    // 某些组件需要展示编辑面板，但不支持编辑，允许自定义不可编辑样式
+    customDisableEditPanel: PropTypes.node,
+
+    // 某些组件禁止预览，可自定义禁止预览蒙层
+    customDisablePreviewPanel: PropTypes.node,
   };
 
   static defaultProps = {
@@ -360,6 +366,8 @@ export default class Design extends PureComponent {
       settings,
       previewFooter,
       globalConfig,
+      customDisableEditPanel,
+      customDisablePreviewPanel,
     } = this.props;
     const {
       selectedUUID,
@@ -398,6 +406,8 @@ export default class Design extends PureComponent {
       globalConfig,
       disabled,
       ref: this.savePreview,
+      customDisableEditPanel,
+      customDisablePreviewPanel,
     });
   }
 

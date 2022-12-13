@@ -108,6 +108,8 @@
 
         &--disabled {
           @include theme-color(color, stroke, 4);
+          @include theme-color(background, stroke, 8);
+          @include theme-color(border-color, stroke, 5);
         }
       }
     }
